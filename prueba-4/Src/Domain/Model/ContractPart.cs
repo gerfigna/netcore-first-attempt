@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace App.Domain.Model;
+namespace Signaturit.Lawsuit.Domain.Model;
 
 
 public class ContractPart

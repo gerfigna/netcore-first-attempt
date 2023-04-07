@@ -1,17 +1,17 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Signaturit.App.Application.Query;
+using Signaturit.Lawsuit.Application.Query;
 
-namespace prueba_4.Controllers;
+namespace Signaturit.Lawsuit.UI;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+public class TrialController : ControllerBase
 {
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger<TrialController> _logger;
     private readonly IMediator _mediator;
 
-    public WeatherForecastController(IMediator mediator, ILogger<WeatherForecastController> logger)
+    public TrialController(IMediator mediator, ILogger<TrialController> logger)
     {
         _logger = logger;
         _mediator = mediator;

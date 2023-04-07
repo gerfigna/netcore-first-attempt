@@ -20,10 +20,12 @@
     <None Remove="App\" />
     <None Remove="App\Domain\Model\" />
     <None Remove="App\Domain\Exception\" />
+    <None Remove="Src\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\" />
-    <Folder Include="App\Domain\Model\" />
-    <Folder Include="App\Domain\Exception\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\Domain\Model\" />
+    <Folder Include="Src\Domain\Exception\" />
+    <Folder Include="Src\Infrastructure\" />
   </ItemGroup>
 </Project>

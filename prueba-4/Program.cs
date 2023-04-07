@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using MediatR;
-using Signaturit.App.Domain.Service;
+using Signaturit.Lawsuit.Domain.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 

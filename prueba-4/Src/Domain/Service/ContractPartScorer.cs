@@ -1,6 +1,6 @@
-﻿using App.Domain.Model;
+﻿using Signaturit.Lawsuit.Domain.Model;
 
-namespace Signaturit.App.Domain.Service;
+namespace Signaturit.Lawsuit.Domain.Service;
 
 public class ContractPartScorer
 {

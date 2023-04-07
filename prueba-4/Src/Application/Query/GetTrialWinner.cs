@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using App.Domain.Model;
-using Signaturit.App.Domain.Service;
+using Signaturit.Lawsuit.Domain.Model;
+using Signaturit.Lawsuit.Domain.Service;
 
-namespace Signaturit.App.Application.Query;
+namespace Signaturit.Lawsuit.Application.Query;
 
 
 public class GetTrialWinnerQuery : IRequest<GetTrialWinnerQueryResponse>
