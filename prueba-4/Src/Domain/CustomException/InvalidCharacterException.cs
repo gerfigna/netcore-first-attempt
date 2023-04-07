@@ -1,12 +1,9 @@
-﻿using System;
+﻿namespace Signaturit.Lawsuit.Domain.CustomException;
 
-namespace Signaturit.Lawsuit.Domain.CustomException
+public class InvalidCharacterException: ArgumentException
 {
-	public class InvalidCharacterException: Exception
+	public InvalidCharacterException(string message): base(message)
 	{
-		public InvalidCharacterException(string message): base(message)
-		{
-		}
 	}
 }
 

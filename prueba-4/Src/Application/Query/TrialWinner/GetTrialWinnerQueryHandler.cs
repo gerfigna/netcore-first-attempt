@@ -2,20 +2,8 @@
 using Signaturit.Lawsuit.Domain.Model;
 using Signaturit.Lawsuit.Domain.Service;
 
-namespace Signaturit.Lawsuit.Application.Query;
+namespace Signaturit.Lawsuit.Application.Query.TrialWinner;
 
-
-public class GetTrialWinnerQuery : IRequest<GetTrialWinnerQueryResponse>
-{
-    public GetTrialWinnerQuery(string plaintiffSignatures, string defendantSignatures)
-    {
-        PlaintiffSignatures = plaintiffSignatures;
-        DefendantSignatures = defendantSignatures;
-    }
-
-    public string PlaintiffSignatures { get; }
-    public string DefendantSignatures { get; }
-}
 
 public class GetTrialWinnerQueryHandler : IRequestHandler<GetTrialWinnerQuery, GetTrialWinnerQueryResponse>
 {
@@ -56,16 +44,4 @@ public class GetTrialWinnerQueryHandler : IRequestHandler<GetTrialWinnerQuery, G
 
         return Task.FromResult(new GetTrialWinnerQueryResponse(score, message));
     }
-}
-
-public class GetTrialWinnerQueryResponse
-{
-    public GetTrialWinnerQueryResponse(int points, string signatures)
-    {
-        Points = points;
-        Signatures = signatures;
-    }
-
-    public int Points { get; set; }
-    public string Signatures { get; }
 }

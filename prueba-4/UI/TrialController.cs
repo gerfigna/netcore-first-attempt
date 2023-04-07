@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Signaturit.Lawsuit.Application.Query;
+using Signaturit.Lawsuit.Application.Query.TrialWinner;
 using Signaturit.Lawsuit.Domain.CustomException;
 
 namespace Signaturit.Lawsuit.UI;
@@ -9,16 +9,14 @@ namespace Signaturit.Lawsuit.UI;
 [Route("[controller]")]
 public class TrialController : ControllerBase
 {
-    private readonly ILogger<TrialController> _logger;
     private readonly IMediator _mediator;
 
-    public TrialController(IMediator mediator, ILogger<TrialController> logger)
+    public TrialController(IMediator mediator)
     {
-        _logger = logger;
         _mediator = mediator;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet(Name = "GetTrialWinner")]
     public async Task<ActionResult<GetTrialWinnerQueryResponse>> Get([FromQuery] string plaintiff, [FromQuery] string defendant)
     {
         try
@@ -27,9 +25,8 @@ public class TrialController : ControllerBase
         }
         catch(InvalidCharacterException _e)
         {
-            return BadRequest(_e.Message);
+            return new BadRequestObjectResult(_e.Message);
         }
-      
+
     }
 }
-

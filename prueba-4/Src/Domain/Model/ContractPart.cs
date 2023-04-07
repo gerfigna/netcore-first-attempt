@@ -1,11 +1,10 @@
-﻿using System;
-using Signaturit.Lawsuit.Domain.CustomException;
+﻿using Signaturit.Lawsuit.Domain.CustomException;
 namespace Signaturit.Lawsuit.Domain.Model;
 
 
 public class ContractPart
 {
-    private SignatureRole[] _signatures;
+    private readonly SignatureRole[] _signatures;
 
     private ContractPart(SignatureRole[] signatures)
     {
@@ -37,6 +36,11 @@ public class ContractPart
     public override string ToString()
     {
         return string.Join("", Signatures.Select(s => s.ToString()));
+    }
+
+    public bool hasRole(SignatureRole r)
+    {
+        return Signatures.Select(s => s.Equals(r)).Count() > 0;
     }
 }
 

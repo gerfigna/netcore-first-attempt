@@ -1,5 +1,4 @@
-﻿using System;
-namespace Signaturit.Lawsuit.Domain.Model;
+﻿namespace Signaturit.Lawsuit.Domain.Model;
 
 public enum SignatureRole
 {

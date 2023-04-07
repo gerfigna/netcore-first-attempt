@@ -20,9 +20,11 @@
     <None Remove="App\" />
     <None Remove="App\Domain\Model\" />
     <None Remove="App\Domain\Exception\" />
+    <None Remove="Src\Application\Query\TrialWinner\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Src\" />
     <Folder Include="Src\Domain\Model\" />
+    <Folder Include="Src\Application\Query\TrialWinner\" />
   </ItemGroup>
 </Project>

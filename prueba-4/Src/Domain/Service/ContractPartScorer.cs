@@ -23,7 +23,7 @@ public class ContractPartScorer
                     score += NotaryPoints;
                     break;
                 case SignatureRole.V:
-                    score += ValidatorPoints;
+                    score += part.hasRole(SignatureRole.K) ? 0 : ValidatorPoints;
                     break;
             }
         }
