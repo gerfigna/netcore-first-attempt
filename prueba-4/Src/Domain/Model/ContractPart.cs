@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Signaturit.Lawsuit.Domain.CustomException;
 namespace Signaturit.Lawsuit.Domain.Model;
 
 
@@ -14,20 +14,20 @@ public class ContractPart
 
     public static ContractPart fromString(string signaturesString)
     {
-        guard(signaturesString);
+        Guard(signaturesString);
         SignatureRole[] roles = signaturesString.Select(c => (SignatureRole)Enum.Parse(typeof(SignatureRole), c.ToString())).ToArray();
         return new ContractPart(roles);
     }
 
 
-    private static void guard(string signatures)
+    private static void Guard(string signatures)
     {
 
         foreach (char c in signatures)
         {
             if (!Enum.IsDefined(typeof(SignatureRole), c.ToString()))
             {
-                throw new ArgumentException($"La cadena '{signatures}' contiene caracteres no válidos");
+                throw new InvalidCharacterException($"La cadena '{signatures}' contiene caracteres no válidos");
             }
         }
     }
