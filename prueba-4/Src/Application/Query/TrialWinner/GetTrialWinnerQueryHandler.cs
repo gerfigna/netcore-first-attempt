@@ -23,25 +23,21 @@ public class GetTrialWinnerQueryHandler : IRequestHandler<GetTrialWinnerQuery, G
         int secondPartyScore = _contractScorer.GetScore(defendant);
 
         string message;
-        int score;
 
         if (firstPartyScore > secondPartyScore)
         {
-            message = $"Paintiff party wins with signatures '{plaintiff.ToString()}'";
-            score = firstPartyScore;
+            message = $"Paintiff party wins with signatures '{plaintiff.ToString()}' and {firstPartyScore} points";
 
         }
         else if (secondPartyScore > firstPartyScore)
         {
-            message = $"Defendant party wins with signatures '{defendant.ToString()}'";
-            score = secondPartyScore;
+            message = $"Defendant party wins with signatures '{defendant.ToString()}' and {secondPartyScore} points";
         }
         else
         {
-            message = "Tie";
-            score = firstPartyScore;
+            message = $"Tie at {firstPartyScore} points";
         }
 
-        return Task.FromResult(new GetTrialWinnerQueryResponse(score, message));
+        return Task.FromResult(new GetTrialWinnerQueryResponse(message));
     }
 }

@@ -2,12 +2,10 @@
 
 public class GetTrialWinnerQueryResponse
 {
-    public GetTrialWinnerQueryResponse(int points, string signatures)
+    public GetTrialWinnerQueryResponse(string message)
     {
-        Points = points;
-        Signatures = signatures;
+        Message = message;
     }
 
-    public int Points { get; set; }
-    public string Signatures { get; }
+    public string Message { get; }
 }
