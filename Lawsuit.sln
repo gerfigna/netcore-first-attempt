@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "prueba-4\app.csproj"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cli", "cli\cli.csproj", "{06FA4053-2556-4450-AB3D-533A711481B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lawsuit", "lawsuit\lawsuit.csproj", "{3503BE31-7FCB-41F2-B013-6F6F2BF6CF35}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{06FA4053-2556-4450-AB3D-533A711481B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06FA4053-2556-4450-AB3D-533A711481B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06FA4053-2556-4450-AB3D-533A711481B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3503BE31-7FCB-41F2-B013-6F6F2BF6CF35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3503BE31-7FCB-41F2-B013-6F6F2BF6CF35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3503BE31-7FCB-41F2-B013-6F6F2BF6CF35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3503BE31-7FCB-41F2-B013-6F6F2BF6CF35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

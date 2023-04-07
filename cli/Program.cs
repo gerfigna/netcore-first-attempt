@@ -28,7 +28,6 @@ class Program
         }
 
         var serviceCollection = new ServiceCollection()
-            //.AddMediatR(Assembly.GetExecutingAssembly())
             .AddMediatR(AppDomain.CurrentDomain.GetAssemblies())
             .AddScoped<ContractPartScorer>()
             .BuildServiceProvider()
