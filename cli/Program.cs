@@ -32,7 +32,7 @@ class Program
                 cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
                 cfg.RegisterServicesFromAssembly(typeof(GetTrialWinnerQueryHandler).Assembly);
             })
-            .AddScoped<ContractPartScorer>()
+            .AddScoped<IContractPartScorer, ContractPartScorer>()
             .BuildServiceProvider()
         ;
 
