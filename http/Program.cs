@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using MediatR;
 using Signaturit.Lawsuit.Domain.Service;
+using Signaturit.Lawsuit.Application.Query.TrialWinner;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddMediatR(cfg => {
+    cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    cfg.RegisterServicesFromAssembly(typeof(GetTrialWinnerQueryHandler).Assembly);
+});
 
 //builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddScoped<ContractPartScorer, ContractPartScorer>();

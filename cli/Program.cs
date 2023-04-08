@@ -28,7 +28,10 @@ class Program
         }
 
         var serviceCollection = new ServiceCollection()
-            .AddMediatR(AppDomain.CurrentDomain.GetAssemblies())
+            .AddMediatR(cfg => {
+                cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+                cfg.RegisterServicesFromAssembly(typeof(GetTrialWinnerQueryHandler).Assembly);
+            })
             .AddScoped<ContractPartScorer>()
             .BuildServiceProvider()
         ;
