@@ -7,9 +7,9 @@ namespace Signaturit.Lawsuit.Application.Query.TrialWinner;
 
 public class GetTrialWinnerQueryHandler : IRequestHandler<GetTrialWinnerQuery, GetTrialWinnerQueryResponse>
 {
-    private ContractPartScorer _contractScorer;
+    private IContractPartScorer _contractScorer;
 
-    public GetTrialWinnerQueryHandler(ContractPartScorer contractScorer)
+    public GetTrialWinnerQueryHandler(IContractPartScorer contractScorer)
     {
         _contractScorer = contractScorer;
     }
@@ -26,7 +26,7 @@ public class GetTrialWinnerQueryHandler : IRequestHandler<GetTrialWinnerQuery, G
 
         if (firstPartyScore > secondPartyScore)
         {
-            message = $"Paintiff party wins with signatures '{plaintiff.ToString()}' and {firstPartyScore} points";
+            message = $"Plaintiff party wins with signatures '{plaintiff.ToString()}' and {firstPartyScore} points";
 
         }
         else if (secondPartyScore > firstPartyScore)

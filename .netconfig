@@ -1,0 +1,7 @@
+[ReportGenerator]
+  reporttypes = Html;Latex
+  targetdirectory = report
+  historydirectory = history
+  assemblyfilters = -tests
+  verbosityLevel = Verbose
+

@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    <PackageReference Include="coverlet.msbuild" Version="3.2.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="DotNetConfig" Version="1.0.6" />
+    <PackageReference Include="DotNetConfig.Configuration" Version="1.0.6" />
+    <PackageReference Include="Moq" Version="4.18.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="UnitTests\" />
+    <None Remove="Domain\Model\" />
+    <None Remove="Domain\Service\" />
+    <None Remove="Application\" />
+    <None Remove="Application\Query\" />
+    <None Remove="Application\Query\TrialWinner\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\Model\" />
+    <Folder Include="Domain\Service\" />
+    <Folder Include="Application\" />
+    <Folder Include="Application\Query\" />
+    <Folder Include="Application\Query\TrialWinner\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lawsuit\lawsuit.csproj" />
+  </ItemGroup>
+</Project>

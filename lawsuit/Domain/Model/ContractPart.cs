@@ -40,7 +40,9 @@ public class ContractPart
 
     public bool hasRole(SignatureRole r)
     {
-        return Signatures.Select(s => s.Equals(r)).Count() > 0;
+        IEnumerable<SignatureRole> enumerable = Signatures.Where(s => s.Equals(r));
+
+        return enumerable.Count() > 0;
     }
 }
 

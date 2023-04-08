@@ -18,7 +18,7 @@ builder.Services.AddMediatR(cfg => {
 });
 
 //builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-builder.Services.AddScoped<ContractPartScorer, ContractPartScorer>();
+builder.Services.AddScoped<IContractPartScorer, ContractPartScorer>();
 
 var app = builder.Build();
 

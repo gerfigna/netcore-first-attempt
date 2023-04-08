@@ -2,7 +2,7 @@
 
 namespace Signaturit.Lawsuit.Domain.Service;
 
-public class ContractPartScorer
+public class ContractPartScorer: IContractPartScorer
 {
     private const int KingPoints = 5;
     private const int NotaryPoints = 2;
