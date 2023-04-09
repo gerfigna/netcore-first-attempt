@@ -10,10 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
-    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.0.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.0.2" />
+    <PackageReference Include="coverlet.collector" Version="3.2.0"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
     <PackageReference Include="coverlet.msbuild" Version="3.2.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -30,6 +32,7 @@
     <None Remove="Application\" />
     <None Remove="Application\Query\" />
     <None Remove="Application\Query\TrialWinner\" />
+    <None Remove="Application\Query\GuessSignature\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />
@@ -38,6 +41,7 @@
     <Folder Include="Application\" />
     <Folder Include="Application\Query\" />
     <Folder Include="Application\Query\TrialWinner\" />
+    <Folder Include="Application\Query\GuessSignature\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\lawsuit\lawsuit.csproj" />

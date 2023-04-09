@@ -6,7 +6,7 @@ using Signaturit.Lawsuit.Domain.CustomException;
 namespace Signaturit.Lawsuit.UI;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api")]
 public class TrialController : ControllerBase
 {
     private readonly IMediator _mediator;
@@ -16,7 +16,7 @@ public class TrialController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet(Name = "GetTrialWinner")]
+    [HttpGet("winner")]
     public async Task<ActionResult<GetTrialWinnerQueryResponse>> Get([FromQuery] string plaintiff, [FromQuery] string defendant)
     {
         try

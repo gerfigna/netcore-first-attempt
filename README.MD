@@ -1,7 +1,7 @@
 ## Tests
 
 
-> `$> dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura`
+> `$> dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura tests/`
 
 > `$> reportgenerator -reports:"tests/coverage.cobertura.xml" -targetdir:"coveragereport"`
 

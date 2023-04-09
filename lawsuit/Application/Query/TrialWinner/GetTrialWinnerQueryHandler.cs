@@ -14,7 +14,7 @@ public class GetTrialWinnerQueryHandler : IRequestHandler<GetTrialWinnerQuery, G
         _contractScorer = contractScorer;
     }
 
-    public async Task<GetTrialWinnerQueryResponse> Handle(GetTrialWinnerQuery request, CancellationToken cancellationToken)
+    public Task<GetTrialWinnerQueryResponse> Handle(GetTrialWinnerQuery request, CancellationToken cancellationToken)
     {
         ContractPart plaintiff = ContractPart.fromString(request.PlaintiffSignatures);
         ContractPart defendant = ContractPart.fromString(request.DefendantSignatures);
@@ -38,6 +38,6 @@ public class GetTrialWinnerQueryHandler : IRequestHandler<GetTrialWinnerQuery, G
             message = $"Tie at {firstPartyScore} points";
         }
 
-        return await Task.FromResult(new GetTrialWinnerQueryResponse(message));
+        return Task.FromResult(new GetTrialWinnerQueryResponse(message));
     }
 }

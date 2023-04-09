@@ -6,7 +6,7 @@ public class ContractPart
 {
     private readonly SignatureRole[] _signatures;
 
-    private ContractPart(SignatureRole[] signatures)
+    protected ContractPart(SignatureRole[] signatures)
     {
         _signatures = signatures;    
     }
@@ -15,11 +15,12 @@ public class ContractPart
     {
         Guard(signaturesString);
         SignatureRole[] roles = signaturesString.Select(c => (SignatureRole)Enum.Parse(typeof(SignatureRole), c.ToString())).ToArray();
+
         return new ContractPart(roles);
     }
 
 
-    private static void Guard(string signatures)
+    protected static void Guard(string signatures)
     {
 
         foreach (char c in signatures)
@@ -40,9 +41,7 @@ public class ContractPart
 
     public bool hasRole(SignatureRole r)
     {
-        IEnumerable<SignatureRole> enumerable = Signatures.Where(s => s.Equals(r));
-
-        return enumerable.Count() > 0;
+        return Signatures.Where(s => s.Equals(r)).Count() > 0;
     }
 }
 
